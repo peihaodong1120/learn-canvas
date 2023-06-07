@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="my_canvas" width="1000" height="1000"></canvas>
+    <script>
+        const context = document.querySelector('#my_canvas').getContext('2d')
+        context.beginPath()
+        // 绘制圆，6参数，前5必填 x坐标，y坐标， 半径， 绘制起点度数， 绘制度数， 默认顺，逆 true
+        context.arc(100, 100, 50, 0, Math.PI*2)
+        // moveTo台笔动作
+        context.moveTo(135, 100);
+        context.arc(100, 100, 35, 0, Math.PI)
+        context.moveTo(85, 80);
+        context.arc(80, 80, 5, 0, Math.PI*2)
+        context.moveTo(125, 80);
+        context.arc(120, 80, 5, 0, Math.PI*2)
+        context.stroke();
+        context.closePath();
+
+
+        // arcTo 绘制圆弧
+
+        context.beginPath();
+        // 起点,
+        context.moveTo(300, 100);
+        context.arcTo(300, 200, 200, 200, 100);
+        context.stroke();
+        context.closePath();
+        
+
+        // 贝塞曲线, 以三角画曲线
+        context.beginPath();
+        context.moveTo(300, 600);
+        context.quadraticCurveTo(150, 600, 150, 500);
+        context.quadraticCurveTo(150, 400, 350, 400);
+        context.quadraticCurveTo(500, 400, 500, 500);
+        context.quadraticCurveTo(500, 600, 380, 600);   
+        context.quadraticCurveTo(380, 650, 300, 700);   
+        context.quadraticCurveTo(320, 700, 300, 600);   
+        context.stroke();
+
+
+
+
+        
+        
+
+
+        
+
+
+        
+        
+        
+
+    </script>
+</body>
+</html>
